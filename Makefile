@@ -17,6 +17,6 @@ start:
 		-v "${root}:/home/${name}" \
 		-w "/home/${name}" \
 		-p 8888:8888 \
-		${name} > /dev/null
+		${name}
 
 .PHONY: alias image start
