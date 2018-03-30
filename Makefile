@@ -6,7 +6,7 @@ alias:
 
 image:
 	docker rmi ${name} || true
-	docker build -t ${name} .
+	docker build --tag ${name} .
 
 start:
 	@docker run \
@@ -14,9 +14,9 @@ start:
 		--tty \
 		--rm \
 		--name ${name} \
-		-v "${root}:/home/${name}" \
-		-w "/home/${name}" \
-		-p 8888:8888 \
+		--volume "${root}:/home/${name}" \
+		--workdir "/home/${name}" \
+		--publish 8888:8888 \
 		${name}
 
 .PHONY: alias image start
