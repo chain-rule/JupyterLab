@@ -1,6 +1,7 @@
 # JupyterLab
 
-A Docker image for running [JupyterLab] without installing anything locally.
+The repository provides a Docker image for running [JupyterLab] without
+installing anything locally.
 
 ## Installation
 
