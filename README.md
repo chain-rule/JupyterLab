@@ -6,8 +6,8 @@ installing anything locally.
 ## Installation
 
 ```bash
-make image
-make alias
+make build
+make link
 ```
 
 ## Usage
