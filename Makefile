@@ -6,7 +6,7 @@ build:
 	docker build --tag ${name} .
 
 link:
-	@echo "alias ${name}='make -f \"${PWD}/Makefile\" root=\"\$${PWD}\" start'" >> ~/.bash_profile
+	echo "alias ${name}='make -f \"${PWD}/Makefile\" root=\"\$${PWD}\" start'" >> ~/.bash_profile
 
 start:
 	@docker run \
