@@ -1,12 +1,14 @@
 name ?= jupyterlab
 root ?= ${PWD}
 
+all: start
+
 build:
 	docker rmi ${name} || true
 	docker build --tag ${name} .
 
 link:
-	echo "alias ${name}='make -f \"${PWD}/Makefile\" root=\"\$${PWD}\" start'" >> ~/.bash_profile
+	echo "alias ${name}='make -f \"${PWD}/Makefile\" root=\"\$${PWD}\"'" >> ~/.bash_profile
 
 start:
 	@docker run \
@@ -19,4 +21,4 @@ start:
 		--publish 8888:8888 \
 		${name}
 
-.PHONY: build link start
+.PHONY: all build link start
