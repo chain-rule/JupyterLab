@@ -10,15 +10,22 @@ build:
 link:
 	echo "alias ${name}='make -f \"${PWD}/Makefile\" root=\"\$${PWD}\"'" >> ~/.bash_profile
 
+shell:
+	docker exec \
+		--interactive \
+		--tty \
+		${name} \
+		/bin/bash
+
 start:
 	@docker run \
 		--interactive \
-		--tty \
-		--rm \
 		--name ${name} \
+		--publish 8888:8888 \
+		--rm \
+		--tty \
 		--volume "${root}:/home/${name}" \
 		--workdir "/home/${name}" \
-		--publish 8888:8888 \
 		${name}
 
-.PHONY: all build link start
+.PHONY: all build link shell start
