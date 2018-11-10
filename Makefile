@@ -8,7 +8,7 @@ build:
 	docker build --tag ${name} .
 
 link:
-	echo "alias ${name}='make -f \"${PWD}/Makefile\" root=\"\$${PWD}\"'" >> ~/.bash_profile
+	echo "alias ${name}='make -C \"${PWD}\" root=\"\$${PWD}\"'" >> ~/.bash_profile
 
 shell:
 	docker exec \
