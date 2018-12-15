@@ -1,4 +1,5 @@
 jupyterlab
 requests
 seaborn
+tensorflow
 xlrd
