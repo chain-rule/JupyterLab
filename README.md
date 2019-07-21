@@ -1,6 +1,6 @@
 # JupyterLab
 
-The repository provides scaffold for building a Docker image for running
+The repository provides a scaffold for building a Docker image for running
 [JupyterLab].
 
 ## Installation
