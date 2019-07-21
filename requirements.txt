@@ -1,4 +1,7 @@
+# Required
 jupyterlab
+
+# Optional
 matplotlib
 numpy
 pandas
