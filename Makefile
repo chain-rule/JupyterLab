@@ -1,6 +1,6 @@
-# The name of the image
-name ?= jupyterlab
-# The root directory to be mounted to the container
+# The name of the Docker image
+name := jupyterlab
+# The directory to be mounted to the container
 root ?= ${PWD}
 
 all: start
@@ -16,10 +16,10 @@ build:
 
 # Start a new container
 start:
-	@docker run --interactive --tty --rm --name ${name} \
-		--volume "${root}:/home/${name}" \
-		--workdir "/home/${name}" \
+	@docker run --interactive --tty --rm \
+		--name ${name} \
 		--publish 8888:8888 \
+		--volume "${root}:/home" \
 		${name}
 
 # Start a shell in a running container

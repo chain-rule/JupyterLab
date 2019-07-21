@@ -24,7 +24,7 @@ Restart the shell.
 Go to an arbitrary directory and use the `jupyterlab` alias:
 
 ```sh
-cd /my/project
+cd /path/to/some/project
 jupyterlab
 ```
 
