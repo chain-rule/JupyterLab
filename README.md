@@ -1,18 +1,29 @@
 # JupyterLab
 
-The repository provides a Docker image for running [JupyterLab] without
-installing anything locally.
+The repository provides scaffold for building a Docker image for running
+[JupyterLab].
 
 ## Installation
 
-```bash
+Build a Docker image:
+
+```sh
 make build
-make link
 ```
+
+Create an alias `jupyterlab` for starting a container:
+
+```sh
+make alias
+```
+
+Restart the shell.
 
 ## Usage
 
-```bash
+Go to an arbitrary directory and use the `jupyterlab` alias:
+
+```sh
 cd /my/project
 jupyterlab
 ```
