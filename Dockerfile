@@ -12,7 +12,7 @@ RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> ~/.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.port = 8888" >> ~/.jupyter/jupyter_notebook_config.py
 
 # Set the working directory
-WORKDIR /home
+WORKDIR /home/jupyterlab
 
 # Stort JupyterLab once the container is launched
 ENTRYPOINT jupyter lab --allow-root --no-browser

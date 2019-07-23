@@ -19,7 +19,7 @@ start:
 	@docker run --interactive --tty --rm \
 		--name ${name} \
 		--publish 8888:8888 \
-		--volume "${root}:/home" \
+		--volume "${root}:/home/jupyterlab" \
 		${name}
 
 # Start a shell in a running container
