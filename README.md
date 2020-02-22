@@ -13,8 +13,6 @@ make build
 
 # Create an alias for convenience:
 make alias
-
-# Restart the shell.
 ```
 
 ### Usage
