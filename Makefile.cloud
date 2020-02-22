@@ -35,7 +35,7 @@ delete:
 		--zone ${zone} \
 		--quiet
 
-shell start:
+start:
 	@echo 'Address:  http://localhost:8888/'
 	@echo ''
 	gcloud compute instances start ${image} --zone ${zone}
@@ -45,4 +45,4 @@ shell start:
 stop:
 	gcloud compute instances stop ${image} --zone ${zone}
 
-.PHONY: alias all build create delete shell start stop
+.PHONY: alias all build create delete start stop
