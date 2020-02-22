@@ -21,7 +21,7 @@ make alias
 # Go to an arbitrary directory:
 cd /path/to/some/project
 
-# Start the container:
+# Start a container:
 jupyterlab
 ```
 
@@ -33,7 +33,7 @@ jupyterlab
 # Build a Docker image and push to Container Registry:
 make -f Makefile.cloud build
 
-# Create an alias `jupyterlab` for convenience:
+# Create an alias for convenience:
 make -f Makefile.cloud alias
 ```
 
@@ -43,7 +43,7 @@ make -f Makefile.cloud alias
 # Create a virtual machine in Compute Engine:
 jupyterlab create
 
-# Start the machine and connect via SSH with port forwarding:
+# Start the machine and connect via SSH:
 jupyterlab start
 
 # Open the web interface:
