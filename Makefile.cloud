@@ -36,14 +36,16 @@ delete:
 		--zone ${zone} \
 		--quiet
 
-start:
+shell:
 	@echo 'Address:  http://localhost:8888/'
 	@echo ''
-	gcloud compute instances start ${image} --zone ${zone}
 	gcloud compute ssh ${image} --zone ${zone} -- -L 8888:localhost:8888 \
 		'docker exec --interactive --tty $$(docker ps -q --filter="name=${image}") zsh'
+
+start:
+	gcloud compute instances start ${image} --zone ${zone}
 
 stop:
 	gcloud compute instances stop ${image} --zone ${zone}
 
-.PHONY: alias all build create delete start stop
+.PHONY: alias all build create delete shell start stop

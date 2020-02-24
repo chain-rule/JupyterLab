@@ -43,8 +43,11 @@ make -f Makefile.cloud alias
 # Create a virtual machine in Compute Engine:
 jupyterlab create
 
-# Start the machine and connect via SSH:
+# Start the machine:
 jupyterlab start
+
+# Open a shell:
+jupyterlab shell
 
 # Open the web interface:
 open http://localhost:8080
