@@ -27,7 +27,7 @@ create:
 		--container-restart-policy never \
 		--machine-type ${machine} \
 		--no-restart-on-failure \
-		--scopes default,bigquery \
+		--scopes default,bigquery,compute-rw,storage-rw \
 		--zone ${zone}
 
 delete:
