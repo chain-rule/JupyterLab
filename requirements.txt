@@ -6,8 +6,6 @@ pylint
 pytest
 scikit-learn
 scipy
-seaborn
-shap
 tensorflow
 xgboost
 yapf
