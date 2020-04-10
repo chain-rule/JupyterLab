@@ -10,6 +10,7 @@ RUN pip install --upgrade --requirement /tmp/requirements.txt
 RUN mkdir -p ~/.jupyter
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> ~/.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.port = 8888" >> ~/.jupyter/jupyter_notebook_config.py
+RUN echo "c.NotebookApp.token = ''" >> ~/.jupyter/jupyter_notebook_config.py
 
 WORKDIR /home/jupyterlab
 
