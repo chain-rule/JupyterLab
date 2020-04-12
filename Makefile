@@ -11,7 +11,6 @@ alias:
 
 # Build a new image
 build:
-	docker rmi ${name} || true
 	docker build --tag ${name} .
 
 # Start a new container
