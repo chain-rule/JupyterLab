@@ -3,14 +3,14 @@
     {
       "command": "kernelmenu:restart-and-clear",
       "keys": [
-        "Shift C"
+        "Ctrl C"
       ],
       "selector": "[data-jp-kernel-user]:focus"
     },
     {
       "command": "runmenu:restart-and-run-all",
       "keys": [
-        "Shift R"
+        "Ctrl R"
       ],
       "selector": "[data-jp-code-runner]"
     }
