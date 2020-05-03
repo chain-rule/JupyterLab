@@ -39,7 +39,11 @@ delete:
 shell:
 	@echo 'Address:  http://localhost:8888/'
 	@echo ''
-	gcloud compute ssh ${image} --zone ${zone} -- -L 8888:localhost:8888 \
+	gcloud compute ssh ${image} \
+		--zone ${zone} \
+		-- \
+		-L 6006:localhost:6006 \
+		-L 8888:localhost:8888 \
 		'docker exec --interactive --tty $$(docker ps -q --filter="name=${image}") zsh'
 
 start:
