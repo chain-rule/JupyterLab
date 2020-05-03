@@ -1,5 +1,5 @@
 # Start with a Python image
-FROM python:3.7.6-slim
+FROM python:3.7.7-slim
 
 # Install Python packages
 COPY requirements.txt /tmp/requirements.txt
