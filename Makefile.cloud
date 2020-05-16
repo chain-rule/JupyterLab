@@ -37,7 +37,7 @@ delete:
 		--quiet
 
 shell:
-	@echo 'Address:  http://localhost:8888/'
+	@echo 'Address: http://localhost:8888/'
 	@echo ''
 	gcloud compute ssh ${image} \
 		--zone ${zone} \
