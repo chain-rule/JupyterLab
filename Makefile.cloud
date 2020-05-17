@@ -38,7 +38,7 @@ delete:
 
 shell:
 	@echo 'Address: http://localhost:8888/'
-	@echo ''
+	@echo
 	gcloud compute ssh ${image} \
 		--zone ${zone} \
 		-- \
