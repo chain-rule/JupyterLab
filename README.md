@@ -50,7 +50,7 @@ jupyterlab start
 jupyterlab shell
 
 # Open the web interface:
-open http://localhost:8080
+open http://localhost:8888
 
 # Stop the machine:
 jupyterlab stop
