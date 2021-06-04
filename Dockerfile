@@ -1,5 +1,5 @@
 # Start with a Python image
-FROM python:3.8.8-slim
+FROM python:3.8.10-slim
 
 # Install command-line tools
 RUN apt-get update
@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y google-cloud-sdk
 RUN git clone https://github.com/IvanUkhov/.development.git ~/.development && make -C ~/.development
 RUN git clone https://github.com/IvanUkhov/.vim.git ~/.vim --recursive && make -C ~/.vim
 RUN ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519
+RUN echo 'StrictHostKeyChecking no' >> ~/.ssh/config
 
 # Install Python packages
 COPY requirements.txt /tmp/requirements.txt
