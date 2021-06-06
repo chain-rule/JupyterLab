@@ -46,10 +46,7 @@ shell:
 		-L 8888:localhost:8888 \
 		'docker exec --interactive --tty $$(docker ps -q --filter="name=${image}") zsh'
 
-start:
-	gcloud compute instances start ${image} --zone ${zone}
+%:
+	gcloud beta compute instances $@ ${image} --zone ${zone}
 
-stop:
-	gcloud compute instances stop ${image} --zone ${zone}
-
-.PHONY: alias all build create delete shell start stop
+.PHONY: alias all build create delete shell

@@ -52,6 +52,12 @@ jupyterlab shell
 # Open the web interface:
 open http://localhost:8888
 
+# Suspend the machine:
+jupyterlab suspend
+
+# Resume the machine:
+jupyterlab resume
+
 # Stop the machine:
 jupyterlab stop
 
