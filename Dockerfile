@@ -1,5 +1,5 @@
 # Start with a Python image
-FROM python:3.8.10-slim
+FROM python:3.9.9-slim
 
 # Install command-line tools
 RUN apt-get update
