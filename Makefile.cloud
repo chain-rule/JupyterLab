@@ -40,6 +40,7 @@ shell:
 	@echo 'Address: http://localhost:8888/'
 	@echo
 	gcloud compute ssh ${image} \
+		--project ${project} \
 		--zone ${zone} \
 		-- \
 		-L 6006:localhost:6006 \
@@ -47,6 +48,8 @@ shell:
 		'docker exec --interactive --tty $$(docker ps -q --filter="name=${image}") zsh'
 
 %:
-	gcloud beta compute instances $@ ${image} --zone ${zone}
+	gcloud compute instances $@ ${image} \
+		--project ${project} \
+		--zone ${zone}
 
 .PHONY: alias all build create delete shell
