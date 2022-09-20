@@ -6,13 +6,16 @@ user ?= $(shell git config --global user.name | tr '[:upper:] ' '[:lower:]-')
 image ?= vertex-ai-workbench-${user}
 zone ?= europe-west2-a
 
+root:=$(dir $(lastword ${MAKEFILE_LIST}))
+
 all: SHELL:=$(shell which zsh)
 all:
-	@grep -q "${name}" "${HOME}/.zshrc" 2> /dev/null || \
-		echo "alias ${name}='make -f \"${PWD}/Makefile.vertex\"'" >> "${HOME}/.zshrc"
+	@if ! $$(grep -q "${name}" "${HOME}/.zshrc" 2> /dev/null); then \
+		echo "alias ${name}='make -f \"${root}Makefile.vertex\"'" >> "${HOME}/.zshrc"; \
+	fi
 	@if [[ -d "${HOME}/.jupyter" ]]; then \
 		mkdir -p "${HOME}/.jupyter/lab"; \
-		ln -Fis "${CURDIR}/.jupyterlab/lab/user-settings" "${HOME}/.jupyter/lab"; \
+		ln -Fis "${root}.jupyter/lab/user-settings" "${HOME}/.jupyter/lab"; \
 	fi
 
 shell:
