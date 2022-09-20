@@ -10,7 +10,7 @@ all: SHELL:=$(shell which zsh)
 all:
 	@grep -q "${name}" "${HOME}/.zshrc" 2> /dev/null || \
 		echo "alias ${name}='make -f \"${PWD}/Makefile.vertex\"'" >> "${HOME}/.zshrc"
-	@if [[ -d "${HOME}/.jupyterlab" ]]; then \
+	@if [[ -d "${HOME}/.jupyter" ]]; then \
 		mkdir -p "${HOME}/.jupyter/lab"; \
 		ln -Fis "${CURDIR}/.jupyter/lab/user-settings" "${HOME}/.jupyter/lab"; \
 	fi
