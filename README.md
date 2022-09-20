@@ -95,6 +95,4 @@ jupyterlab resume
 jupyterlab stop
 ```
 
-### Usage
-
 [JupyterLab]: https://github.com/jupyterlab/jupyterlab
