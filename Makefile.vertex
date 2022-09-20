@@ -6,6 +6,7 @@ user ?= $(shell git config --global user.name | tr '[:upper:] ' '[:lower:]-')
 image ?= vertex-ai-workbench-${user}
 zone ?= europe-west2-a
 
+all: SHELL:=$(shell which zsh)
 all:
 	@grep -q "${name}" "${HOME}/.zshrc" 2> /dev/null || \
 		echo "alias ${name}='make -f \"${PWD}/Makefile.vertex\"'" >> "${HOME}/.zshrc"
