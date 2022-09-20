@@ -19,7 +19,7 @@ all:
 	fi
 
 shell:
-	@echo 'JupyterLab: http://localhost:8888/'
+	@echo 'JupyterLab: http://localhost:8080/'
 	@echo 'TensorBoard: http://localhost:6006/'
 	@echo
 	gcloud compute ssh ${image} \
@@ -27,7 +27,7 @@ shell:
 		--zone ${zone} \
 		-- \
 		-L 6006:localhost:6006 \
-		-L 8888:localhost:8888
+		-L 8080:localhost:8080
 
 %:
 	gcloud compute instances $@ ${image} \
