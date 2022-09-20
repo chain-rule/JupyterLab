@@ -37,7 +37,8 @@ delete:
 		--quiet
 
 shell:
-	@echo 'Address: http://localhost:8888/'
+	@echo 'JupyterLab: http://localhost:8888/'
+	@echo 'TensorBoard: http://localhost:6006/'
 	@echo
 	gcloud compute ssh ${image} \
 		--project ${project} \

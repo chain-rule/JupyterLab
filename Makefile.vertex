@@ -1,0 +1,33 @@
+name := jupyterlab
+
+project ?= $(shell gcloud config get-value project)
+user ?= $(shell git config --global user.name | tr '[:upper:] ' '[:lower:]-')
+
+image ?= vertex-ai-workbench-${user}
+zone ?= europe-west2-a
+
+all:
+	@grep -q "${name}" "${HOME}/.zshrc" 2> /dev/null || \
+		echo "alias ${name}='make -f \"${PWD}/Makefile.vertex\"'" >> "${HOME}/.zshrc"
+	@if [[ -d "${HOME}/.jupyterlab" ]]; then \
+		mkdir -p "${HOME}/.jupyterlab/lab"; \
+		ln -Fis "${CURDIR}/.jupyter/lab/user-settings" "${HOME}/.jupyterlab/lab"; \
+	fi
+
+shell:
+	@echo 'JupyterLab: http://localhost:8080/'
+	@echo 'TensorBoard: http://localhost:6006/'
+	@echo
+	gcloud compute ssh ${image} \
+		--project ${project} \
+		--zone ${zone} \
+		-- \
+		-L 6006:localhost:6006 \
+		-L 8888:localhost:8080
+
+%:
+	gcloud compute instances $@ ${image} \
+		--project ${project} \
+		--zone ${zone}
+
+.PHONY: all shell

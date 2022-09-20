@@ -7,7 +7,7 @@ The repository provides a scaffold for building a Docker image for running
 
 ### Installation
 
-```sh
+```shell
 # Build a Docker image:
 make build
 
@@ -17,7 +17,7 @@ make alias >> ~/.zshrc
 
 ### Usage
 
-```sh
+```shell
 # Go to an arbitrary directory:
 cd /path/to/some/project
 
@@ -29,7 +29,7 @@ jupyterlab
 
 ### Installation
 
-```sh
+```shell
 # Build a Docker image and push to Container Registry:
 make -f Makefile.cloud build
 
@@ -39,7 +39,7 @@ make -f Makefile.cloud alias >> ~/.zshrc
 
 ### Usage
 
-```sh
+```shell
 # Create a virtual machine in Compute Engine:
 jupyterlab create
 
@@ -64,5 +64,37 @@ jupyterlab stop
 # Delete the machine:
 jupyterlab delete
 ```
+
+## Vertex AI
+
+### Installation
+
+```shell
+git clone https://github.com/chain-rule/JupyterLab.git ~/JupyterLab && make -C ~/JupyterLab
+```
+
+### Usage
+
+```shell
+# Start the machine:
+jupyterlab start
+
+# Open a shell:
+jupyterlab shell
+
+# Open the web interface:
+open http://localhost:8080
+
+# Suspend the machine:
+jupyterlab suspend
+
+# Resume the machine:
+jupyterlab resume
+
+# Stop the machine:
+jupyterlab stop
+```
+
+### Usage
 
 [JupyterLab]: https://github.com/jupyterlab/jupyterlab
