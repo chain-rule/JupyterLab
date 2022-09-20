@@ -70,7 +70,7 @@ jupyterlab delete
 ### Installation
 
 ```shell
-git clone https://github.com/chain-rule/JupyterLab.git ~/JupyterLab && make -C ~/JupyterLab
+git clone https://github.com/chain-rule/JupyterLab.git ~/JupyterLab && make -f ~/JupyterLab/Makefile.vertex
 ```
 
 ### Usage
