@@ -8,16 +8,20 @@ image ?= ${name}-${user}
 machine ?= n2-standard-8
 zone ?= europe-west1-b
 
+.PHONY: all
 all: shell
 
+.PHONY: alias
 alias:
 	@echo "alias ${name}='make -f \"${PWD}/Makefile.cloud\"'"
 
+.PHONY: build
 build:
 	docker build --tag ${name} .
 	docker tag ${name} ${registry}/${project}/${image}
 	docker push ${registry}/${project}/${image}
 
+.PHONY: create
 create:
 	gcloud compute instances create-with-container ${image} \
 		--container-image ${registry}/${project}/${image} \
@@ -30,12 +34,14 @@ create:
 		--scopes default,bigquery,compute-rw,storage-rw \
 		--zone ${zone}
 
+.PHONY: delete
 delete:
 	gcloud compute instances delete ${image} \
 		--delete-disks all \
 		--zone ${zone} \
 		--quiet
 
+.PHONY: shell
 shell:
 	@echo 'JupyterLab: http://localhost:8888/'
 	@echo 'TensorBoard: http://localhost:6006/'
@@ -52,5 +58,3 @@ shell:
 	gcloud compute instances $@ ${image} \
 		--project ${project} \
 		--zone ${zone}
-
-.PHONY: alias all build create delete shell
