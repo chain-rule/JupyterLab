@@ -6,7 +6,7 @@ user ?= $(shell git config --global user.name | tr '[:upper:] ' '[:lower:]-')
 registry ?= eu.gcr.io
 image ?= ${name}-${user}
 machine ?= n2-standard-8
-zone ?= europe-west1-b
+zone ?= us-central1-a
 
 .PHONY: all
 all: shell

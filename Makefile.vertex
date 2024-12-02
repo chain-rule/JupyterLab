@@ -4,7 +4,7 @@ project ?= $(shell gcloud config get-value project)
 user ?= $(shell git config --global user.name | tr '[:upper:] ' '[:lower:]-')
 
 image ?= ${name}-${user}
-zone ?= europe-west2-a
+zone ?= us-central1-a
 
 root:=$(dir $(lastword ${MAKEFILE_LIST}))
 
